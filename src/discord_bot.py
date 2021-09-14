@@ -18,8 +18,8 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     # set channel
-    channel = bot.get_channel(885636849987649557)
-    if message.channel == channel and message.author.id != 873164002191085589:
+    channel = bot.get_channel('Your id here')
+    if message.channel == channel and message.author.id != 'Your id here':
         product_info = cmd_search.searching(message.content)
         debug_colors.prCyan('command called')
         if product_info:
@@ -55,9 +55,9 @@ async def advertise_nike_products(product, links, command = False):
         return
 
     # define the channel in which the products will be advertised
-    channel = bot.get_channel(885635225202343986)
+    channel = bot.get_channel('Your id here')
     if command == True:
-        channel = bot.get_channel(885636849987649557)
+        channel = bot.get_channel('Your id here')
     
     embed = discord.Embed(
         title = 'Model',
@@ -124,7 +124,7 @@ async def check_calendary():
         calendary_ds.to_csv('./db/advertise_calendary.csv', index=False)
 
 async def advertise_calendary(product):
-    channel = bot.get_channel(885635451027857458)
+    channel = bot.get_channel('Your id here')
     
     embed = discord.Embed(
         title = 'Model',
@@ -144,4 +144,4 @@ async def advertise_calendary(product):
     embed.add_field(name = f'Link', value=f'[link]({product[3]})', inline=False)
     await channel.send(embed = embed)
 
-bot.run("ODczMTY0MDAyMTkxMDg1NTg5.YQ0bWA.1NFvfj48N65w6uWpEWjvYvuqSnA")
+bot.run("Your id here")
